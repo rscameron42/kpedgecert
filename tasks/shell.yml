@@ -1,0 +1,6 @@
+- name: git checkout my-nix-env
+  ansible.builtin.git:
+    repo: 'git@github.com:rscameron42/my-nix-env.git'
+    clone: yes
+    dest:  /srv/git
+

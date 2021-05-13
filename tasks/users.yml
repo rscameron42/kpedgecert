@@ -1,0 +1,23 @@
+- name: create ansible user
+  user:
+    name: ansible
+    system: yes
+
+- name: copy sudoers_ansible
+  copy:
+    src: files/sudoers_ansible
+    dest: /etc/sudoers.d/ansible
+    owner: root
+    group: root
+    mode: 0440
+
+- name: create ron
+  user:
+    name: ron
+    create_home: yes
+    append: yes
+    groups: sudo
+    password: $6$w.G/SI4LqIRGsf5c$71ViH46hW9u6L6vJJx8PO9PSATy2yFbNtXEyubJY8nIdkI2qz3FfaAwCeZZ8WCbma81zHuR2DqS2sM8rNRLf40
+    update_password: on_create
+    shell: /usr/bin/zsh
+ 
