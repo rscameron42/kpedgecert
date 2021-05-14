@@ -2,5 +2,5 @@
   git:
     repo: 'https://github.com/rscameron42/my-nix-env.git'
     clone: yes
-    dest:  /srv/git
+    dest:  /srv/myshell
 
