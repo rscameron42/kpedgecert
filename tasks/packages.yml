@@ -12,6 +12,7 @@
       - neofetch
       - net-tools
       - netcat
+      - nginx
       - nmap
       - ntopng
       - openssh-server
