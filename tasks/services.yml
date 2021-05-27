@@ -1,4 +1,4 @@
-- name: Start service nginx, if not started
+- name: start nginx
   ansible.builtin.service:
     name: nginx
     state: started
