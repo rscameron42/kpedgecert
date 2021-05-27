@@ -2,6 +2,7 @@
   apt: 
     name: 
       - curl
+      - dnsutils
       - git
       - htop
       - ipcalc

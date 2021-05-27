@@ -20,4 +20,53 @@
     password: $6$w.G/SI4LqIRGsf5c$71ViH46hW9u6L6vJJx8PO9PSATy2yFbNtXEyubJY8nIdkI2qz3FfaAwCeZZ8WCbma81zHuR2DqS2sM8rNRLf40
     update_password: on_create
     shell: /usr/bin/zsh
+
+- name: copy sudoers_ron
+  copy:
+    src: files/sudoers_ron
+    dest: /etc/sudoers.d/ron
+    owner: root
+    group: root
+    mode: 0440
  
+- name: create Test User
+  user:
+    name: testuser
+    create_home: yes
+    append: yes
+    groups: sudo
+    password: $6$xS5WQHsOw6ID5Zrx$Hl3sJsj2yxRPlHIFh2R.Es8CsP8kDxPaHtZcGudGb0MQH9C9yUGgfAI64Oo5nE6Ao5tzs4uSiK7pkCOjEopD0.
+    update_password: on_create
+    shell: /usr/bin/zsh
+
+- name: copy sudoers_testuser
+  copy:
+    src: files/sudoers_testuser
+    dest: /etc/sudoers.d/testuser
+    owner: root
+    group: root
+    mode: 0440
+
+- name: copy testuser.zshrc
+  copy:
+    src: files/testuser.zshrc
+    dest: /home/testuser/.zshrc
+    owner: testuser
+    group: testuser
+    mode: 0664
+
+- name: copy aliases
+  copy:
+    src: files/.aliases
+    dest: /home/testuser/.aliases
+    owner: testuser
+    group: testuser
+    mode: 0664
+    
+- name: copy aliases.linux
+  copy:
+    src: files/.aliases.linux
+    dest: /home/testuser/.aliases.linux
+    owner: testuser
+    group: testuser
+    mode: 0664
