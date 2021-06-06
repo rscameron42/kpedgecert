@@ -16,6 +16,7 @@
       - nginx
       - nmap
       - ntopng
+      - ntpdate
       - openssh-server
       - python3-pip
       - ranger
